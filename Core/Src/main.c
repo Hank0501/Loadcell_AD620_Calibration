@@ -29,6 +29,14 @@
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 #define ALPHA_LOADCELL 0.99
+
+// Weight in gram
+#define MASS_1 1080.0
+#define MASS_2 1090.0
+#define MASS_3 998.2
+#define MASS_4 490.0
+#define MASS_5 1604.0
+#define MASS_6 443.6
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -55,9 +63,80 @@ uint32_t start_tick;
 
 int counter;
 
-// int weight[21] = {0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 450, 400, 350, 300, 250, 200, 150, 100, 50, 0};
-int weight[2] = {0, 5};
-int weight_variable;
+// float weight[33] = {
+//     0,
+//     MASS_1,
+//     MASS_1 + 250,
+//     MASS_1 + 500,
+//     MASS_1 + MASS_2,
+//     MASS_1 + MASS_2 + 250,
+//     MASS_1 + MASS_2 + 500,
+//     MASS_1 + MASS_2 + MASS_3,
+//     MASS_1 + MASS_2 + MASS_3 + 250,
+//     MASS_1 + MASS_2 + MASS_3 + MASS_4,
+//     MASS_1 + MASS_2 + MASS_3 + MASS_4 + 250,
+//     MASS_1 + MASS_2 + MASS_3 + MASS_4 + 500,
+//     MASS_1 + MASS_2 + MASS_3 + MASS_4 + MASS_5,
+//     MASS_1 + MASS_2 + MASS_3 + MASS_4 + MASS_5 + 250,
+//     MASS_1 + MASS_2 + MASS_3 + MASS_4 + MASS_5 + MASS_6,
+//     MASS_1 + MASS_2 + MASS_3 + MASS_4 + MASS_5 + MASS_6 + 250,
+//     MASS_1 + MASS_2 + MASS_3 + MASS_4 + MASS_5 + MASS_6 + 500,
+//     MASS_1 + MASS_2 + MASS_3 + MASS_4 + MASS_5 + MASS_6 + 250,
+//     MASS_1 + MASS_2 + MASS_3 + MASS_4 + MASS_5 + MASS_6,
+//     MASS_1 + MASS_2 + MASS_3 + MASS_4 + MASS_5 + 250,
+//     MASS_1 + MASS_2 + MASS_3 + MASS_4 + MASS_5,
+//     MASS_1 + MASS_2 + MASS_3 + MASS_4 + 500,
+//     MASS_1 + MASS_2 + MASS_3 + MASS_4 + 250,
+//     MASS_1 + MASS_2 + MASS_3 + MASS_4,
+//     MASS_1 + MASS_2 + MASS_3 + 250,
+//     MASS_1 + MASS_2 + MASS_3,
+//     MASS_1 + MASS_2 + 500,
+//     MASS_1 + MASS_2 + 250,
+//     MASS_1 + MASS_2,
+//     MASS_1 + 500,
+//     MASS_1 + 250,
+//     MASS_1,
+//     0};
+
+float weight[37] = {
+    0,
+    250,
+    500,
+    MASS_1,
+    MASS_1 + 250,
+    MASS_1 + 500,
+    MASS_1 + MASS_2,
+    MASS_1 + MASS_2 + 250,
+    MASS_1 + MASS_2 + 500,
+    MASS_1 + MASS_2 + MASS_3,
+    MASS_1 + MASS_2 + MASS_3 + 250,
+    MASS_1 + MASS_2 + MASS_3 + MASS_4,
+    MASS_1 + MASS_2 + MASS_3 + MASS_4 + 250,
+    MASS_1 + MASS_2 + MASS_3 + MASS_4 + 500,
+    MASS_1 + MASS_2 + MASS_3 + MASS_4 + MASS_5,
+    MASS_1 + MASS_2 + MASS_3 + MASS_4 + MASS_5 + 250,
+    MASS_1 + MASS_2 + MASS_3 + MASS_4 + MASS_5 + MASS_6,
+    MASS_1 + MASS_2 + MASS_3 + MASS_4 + MASS_5 + MASS_6 + 250,
+    MASS_1 + MASS_2 + MASS_3 + MASS_4 + MASS_5 + MASS_6 + 500,
+    MASS_1 + MASS_2 + MASS_3 + MASS_4 + MASS_5 + MASS_6 + 250,
+    MASS_1 + MASS_2 + MASS_3 + MASS_4 + MASS_5 + MASS_6,
+    MASS_1 + MASS_2 + MASS_3 + MASS_4 + MASS_5 + 250,
+    MASS_1 + MASS_2 + MASS_3 + MASS_4 + MASS_5,
+    MASS_1 + MASS_2 + MASS_3 + MASS_4 + 500,
+    MASS_1 + MASS_2 + MASS_3 + MASS_4 + 250,
+    MASS_1 + MASS_2 + MASS_3 + MASS_4,
+    MASS_1 + MASS_2 + MASS_3 + 250,
+    MASS_1 + MASS_2 + MASS_3,
+    MASS_1 + MASS_2 + 500,
+    MASS_1 + MASS_2 + 250,
+    MASS_1 + MASS_2,
+    MASS_1 + 500,
+    MASS_1 + 250,
+    MASS_1,
+    500,
+    250,
+    0};
+float weight_variable;
 
 // float measure_weight;
 /* USER CODE END PV */
