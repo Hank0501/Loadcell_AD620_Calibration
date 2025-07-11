@@ -1,5 +1,5 @@
 #STM Touch Studio user settings - do not edit
-#Sat Jul 05 22:38:39 CST 2025
+#Fri Jul 11 12:28:18 CST 2025
 ExprVariable.Col0ModelIdx=0
 ExprVariable.Col0Width=15
 ExprVariable.Col1ModelIdx=1
@@ -37,7 +37,7 @@ Log.DetectStm8LP=false
 Log.DirectSynchronized=false
 Log.EnableLog=true
 Log.ExhaustiveDisplay=false
-Log.FilenameRelative=log.txt
+Log.FilenameRelative=0711\\0711_rawData.txt
 Log.GuiRate=false
 Log.LittleEndian=true
 Log.MaxConsecutiveCommErrors=10
@@ -107,11 +107,11 @@ VarViewer1.Visible=true
 Variable.Col0ModelIdx=0
 Variable.Col0Width=15
 Variable.Col1ModelIdx=1
-Variable.Col1Width=92
+Variable.Col1Width=131
 Variable.Col2ModelIdx=2
-Variable.Col2Width=92
+Variable.Col2Width=72
 Variable.Col3ModelIdx=3
-Variable.Col3Width=91
+Variable.Col3Width=72
 Variable.Col4ModelIdx=4
 Variable.Col4Width=40
 Variable.Number=4
